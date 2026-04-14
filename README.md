@@ -1,33 +1,83 @@
-🔬 PLC Impulsive Noise Simulation (OFDM-Based)
+- **Modulation:** QPSK  
+- **Number of subcarriers:** 64  
+- **SNR (AWGN):** 20 dB  
+- **SIR (Impulsive Noise):** -10 dB  
+- **Impulse Probability:** 0.1  
 
-This project presents a simulation of an OFDM-based Power Line Communication (PLC) system under Bernoulli-Gaussian impulsive noise, which is a key challenge in PLC environments.
+---
 
-📌 Key Features
-OFDM system with 64 subcarriers
-QPSK modulation
-Bernoulli-Gaussian impulsive noise modeling
-AWGN background noise
-Frequency-domain constellation analysis
-⚙️ System Model
-SNR (AWGN): 20 dB
-SIR (Impulse): -10 dB
-Impulse Probability: 0.1
-📊 Results
-Impulsive Noise (Time Domain)
+## 🧠 Key Features
 
-Shows random high-energy spikes caused by impulsive noise.
+- OFDM signal generation using IFFT/FFT  
+- QPSK modulation  
+- Bernoulli-Gaussian impulsive noise modeling  
+- Combination of AWGN + impulsive noise  
+- Frequency-domain constellation analysis  
+- Visualization of noise behavior in time domain  
 
-Constellation Diagram
+---
 
-Demonstrates distortion of received symbols under PLC noise conditions.
-▶️ How to Run
+## 📁 Project Structure
+
+
+plc-impulsive-noise-simulation/
+│
+├── src/
+│ └── plc_impulsive_noise_simulation.py
+│
+├── results/
+│ ├── impulsive_noise.png
+│ └── constellation.png
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
+
+
+---
+
+## 📊 Simulation Results
+
+### 🔹 Impulsive Noise (Time Domain)
+High-energy spikes appear randomly due to impulsive noise in PLC channels.
+
+### 🔹 Constellation Diagram
+The received symbols are distorted compared to transmitted symbols due to noise effects.
+
+![Constellation](results/constellation.png)
+
+---
+
+## ▶️ How to Run
+
+1. Install dependencies:
+```bash
 pip install -r requirements.txt
-python src/simulation.py
+Run the simulation:
+python src/plc_impulsive_noise_simulation.py
+🎯 Contribution
+
+This project provides a simple and reproducible implementation of impulsive noise modeling in PLC systems using a Bernoulli-Gaussian approach.
+It can be used for:
+
+Research and benchmarking
+Understanding PLC noise behavior
+Educational purposes in communication systems
 📚 Related Work
 
-This simulation is based on PLC channel modeling using Bernoulli-Gaussian noise, commonly used in recent literature for impulsive noise analysis.
+This simulation is based on widely used Bernoulli-Gaussian models in PLC literature for impulsive noise characterization.
 
 👤 Author
 
 PhD Student in Electrical and Electronics Engineering
-Focused on PLC, signal processing, and machine learning
+Research Interests:
+
+Power Line Communication (PLC)
+Signal Processing
+Machine Learning
+⭐ Notes
+This project is part of a broader study on PLC vs Talkative Power Conversion (TPC)
+Future work may include:
+Channel modeling extensions
+Deep learning-based noise mitigation
+Hybrid PLC-TPC systems
